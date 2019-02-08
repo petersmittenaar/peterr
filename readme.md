@@ -1,5 +1,11 @@
 # peterr
-Personal package with R functions by Peter Smittenaar. 
+Personal package with R functions by Peter Smittenaar. Install at your own risk. 
+
+```
+install.packages("devtools")
+devtools::install_github('petersmittenaar/peterr')
+library(peterr)
+```
 
 ### To do
 1. Figure out how to automate build/document
