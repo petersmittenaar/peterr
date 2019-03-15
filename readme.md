@@ -7,6 +7,21 @@ devtools::install_github('petersmittenaar/peterr')
 library(peterr)
 ```
 
+### How to build and test after adding new function
+Open up R
+
+```
+setwd('./peterr')
+# install.packages("devtools")
+# devtools::install_github("klutometis/roxygen")
+library(roxygen2)
+library(devtools)
+devtools::test()
+document()
+setwd('..')
+install('peterr')
+```
+
 ### To do
 1. Figure out how to automate build/document
 
