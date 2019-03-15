@@ -4,7 +4,7 @@
 \alias{plot_factor_histogram}
 \title{Plot a histogram with factor frequencies}
 \usage{
-plot_factor_histogram(v, max.levels = 20)
+plot_factor_histogram(v, max.levels = 30)
 }
 \arguments{
 \item{v}{factor or other array to plot}
@@ -19,7 +19,8 @@ Pass a factor and get a ggplot histogram of the frequency of each factor level. 
 If the factor has more than \code{max.levels} levels, abandon ship and return empty ggplot object.
 }
 \examples{
-plot_factor_histogram(iris)
+plot_factor_histogram(iris$Species)
+plot_factor_histogram(iris$Sepal.Length, max.levels=40)
 }
 \seealso{
 \code{\link{geom_bar}} which this function wraps

@@ -8,7 +8,8 @@
 #' @seealso \code{\link{geom_bar}} which this function wraps
 #' @export
 #' @examples 
-#' plot_factor_histogram(iris)
+#' plot_factor_histogram(iris$Species)
+#' plot_factor_histogram(iris$Sepal.Length, max.levels=40)
 plot_factor_histogram = function(v, max.levels=30) {
     if (!is.factor(v)) v = factor(v)
     if (nlevels(v) > max.levels | nlevels(v) == 0) {
@@ -24,6 +25,6 @@ plot_factor_histogram = function(v, max.levels=30) {
         ggplot2::geom_bar(ggplot2::aes(y = (..count..)/sum(..count..))) + 
         ggplot2::scale_y_continuous(labels = scales::percent) + 
         ggplot2::theme_minimal() +
-        ggplot2::theme(axis.title = element_blank())
+        ggplot2::theme(axis.title = ggplot2::element_blank())
     return(g) 
 }
