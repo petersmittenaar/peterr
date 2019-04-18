@@ -2,6 +2,7 @@
 
 export(cor_get_n_strongest)
 export(install.packages2)
+export(log_odds_to_prob)
 export(plot_factor_histogram)
 export(pretty_histogram)
 export(write_xclip)
