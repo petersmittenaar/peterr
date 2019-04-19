@@ -9,8 +9,8 @@
 #' @seealso \code{\link{stats::cor}} which this function wraps
 #' @export
 #' @examples 
-#' cor_get_n_strongest(iris)
-cor_get_n_strongest <- function(df, n=10, method='pearson', use='pairwise.complete.obs') {
+#' CorGetNStrongest(iris)
+CorGetNStrongest <- function(df, n=10, method='pearson', use='pairwise.complete.obs') {
   
   df = dplyr::select_if(df, function(x) is.numeric(x) | is.logical(x))
   if (ncol(df) < 2) {

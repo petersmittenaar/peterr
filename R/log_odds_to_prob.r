@@ -7,10 +7,10 @@
 #' @examples 
 #' f = glm(Species == 'versicolor' ~ ., data=iris, family=binomial) 
 #' df = broom::augment(f, iris)
-#' df$.prob = log_odds_to_prob(df$.fitted)
+#' df$.prob = LogOddsToProb(df$.fitted)
 #' plot(df$.prob, df$Species == 'versicolor')
 #'
 #' all(dplyr::near(df$.prob, predict(f, iris, type='response')))  # same thing as using predict()
-log_odds_to_prob = function(x) {
+LogOddsToProb = function(x) {
     return(exp(x) / (1+exp(x)))
 }

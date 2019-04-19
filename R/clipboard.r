@@ -7,8 +7,8 @@
 #' @seealso \code{\link{write.table}} which this function wraps
 #' @export
 #' @examples 
-#' write_xclip(iris)
-write_xclip <- function(x, ...) {
+#' WriteXclip(iris)
+WriteXclip <- function(x, ...) {
   if (!isTRUE(file.exists(Sys.which("xclip")[1L]))) {
     warning("Cannot find xclip. Install if on linux, or do not use this function if on other OS")
     return(FALSE)
