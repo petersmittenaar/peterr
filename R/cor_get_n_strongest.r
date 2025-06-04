@@ -20,12 +20,13 @@ CorGetNStrongest <- function(df, n=10, method='pearson', use='pairwise.complete.
 
   r = cor(df, method=method, use=use)
   rdf = suppressMessages(r %>% as.table() %>%
-   tibble::as_tibble(.name_repair = 'universal') %>% 
-   dplyr::rename(var1 = `...1`, var2 = `...2`, r=n) %>%
+   tibble::as_tibble(.name_repair = 'universal') %>%
+   dplyr::rename(var1 = `...1`, var2 = `...2`, r = n) %>%
    # remove symmetry
-   dplyr::transmute(var1n = pmin(var1, var2), var2n=pmax(var1, var2), r) %>% 
+   dplyr::transmute(var1n = pmin(var1, var2), var2n = pmax(var1, var2), r) %>%
    dplyr::distinct() %>%
    dplyr::filter(var1n != var2n) %>%
+   dplyr::rename(var1 = var1n, var2 = var2n) %>%
    dplyr::arrange(dplyr::desc(abs(r))) %>%
    dplyr::filter(dplyr::row_number() <= n))
 
