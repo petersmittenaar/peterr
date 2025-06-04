@@ -3,7 +3,7 @@
 #' Takes a dataframe and calculates pairwise correlations between all numeric/logical variables. Returns a tibble with strongest n correlations. Might also return the p-value in the future. 
 #' @param df dataframe (e.g. tibble)
 #' @param n number of strongest correlations to return
-#' @param method type of correlationn, see \code{\link{stats::cor}}
+#' @param method type of correlation, see \code{\link{stats::cor}}
 #' @param use how to deal with missing values, see \code{\link{stats::cor}}
 #' @return tibble with columns var1, var2, r
 #' @seealso \code{\link{stats::cor}} which this function wraps
