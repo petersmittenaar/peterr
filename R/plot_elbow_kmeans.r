@@ -3,7 +3,7 @@
 #' An "elbow plot" hopefully shows you how many clusters are appropriate, as indicated by a minimal reduction in within-group sum of squares upon increasing k. In reality, few data sets will show such an elbow, but it is nonetheless a common method.
 #' Removes incomplete records.
 #' @param df dataframe ready for kmeans (e.g. scaled)
-#' @param max.clusters how to deal with missing values, see \code{\link{stats::cor}}
+#' @param max.clusters maximum number of clusters to examine
 #' @param plot.title string to add to plot
 #' @return ggplot object
 #' @seealso \code{\link{stats::kmeans}} which this function wraps, and \link{https://stackoverflow.com/questions/15376075/cluster-analysis-in-r-determine-the-optimal-number-of-clusters} for original code
